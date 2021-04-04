@@ -1,21 +1,20 @@
 \begin{battle}{Incursion}
 \battleinfo{rout}{4-5}{\robin, \frederick}
 \prep{
-	\units{
-		\remove{\ricken ($\downarrow\leftarrow$)}
-	}
-	\item Inventory:
-	\begin{itemize}
+	\inventory{
 		\robinf
 		\begin{itemize}
 			\use{Second Seal}, reclass to Pegasus Rider
 			\item Take Bronze Lance, Javelin
 		\end{itemize}
-		\frederickf
+		\frederickf \ ($\rightarrow$)
 		\begin{itemize}
 			\item Stash all weapons
 		\end{itemize}
-	\end{itemize}		
+	}
+	\units{
+		\remove{\ricken \ ($\downarrow$)}
+	}
 }
 \begin{enumerate}
 \turn{
@@ -30,7 +29,7 @@
 	\auto
 }
 \turn{
-	\item If you are low on HP (below half), can heal. Always end battle on turn 5 at the latest, to avoid reinforcements.
+	\item If you are low on HP (below half), can heal. Always end battle on turn 5 at the latest, to avoid reinforcements. Sometime the archer doesn't move to the correct spot.
 	\item \textit{If you don't need to heal:}
 	\begin{itemize}
 	\robinf
@@ -40,6 +39,11 @@
 	\begin{itemize}
 	\robinf
 	\moveattack{2R, 1D}{Archer}{1U}
+	\end{itemize}
+	\item \textit{If the \enemy{Archer} moved to 1R of \robin:}
+	\begin{itemize}
+	\robinf
+	\moveattack{1R, 1D}{Archer}{1U}
 	\end{itemize}
 }
 \turn{
@@ -51,6 +55,11 @@
 	\begin{itemize}
 	\robinf
 	\moveuse{2R}{Elixir/Concoction}
+	\end{itemize}
+	\item \textit{If the \enemy{Archer} had moved to 1R of \robin:}
+	\begin{itemize}
+	\robinf
+	\moveuse{4R}{Elixir/Concoction if needed}
 	\end{itemize}
 }
 \turn{
