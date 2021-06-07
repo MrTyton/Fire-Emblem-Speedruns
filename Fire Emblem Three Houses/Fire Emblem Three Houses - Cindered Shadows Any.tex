@@ -1,0 +1,302 @@
+\documentclass[a4paper]{report}
+\usepackage[group-separator={,},group-minimum-digits={3}]{siunitx}
+\usepackage[utf8]{inputenc}
+\usepackage[dvipsnames, table]{xcolor}
+\usepackage{tcolorbox}
+\usepackage{multicol}
+\usepackage{lipsum}
+\usepackage[margin=0.2in]{geometry}
+\usepackage{xstring}
+\usepackage{xifthen}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\pagenumbering{gobble}
+\setlength{\columnsep}{1.5cm}
+\setlength{\columnseprule}{0.2pt}
+\usepackage{latexsym}
+\usepackage{hyperref}
+\usepackage[none]{hyphenat}
+\usepackage{graphicx}
+\usepackage{etoolbox}
+\usepackage{pgffor}
+\usepackage{titlepic}
+\usepackage{enumitem}
+\usepackage[outline]{contour}
+
+\setlist{nosep}
+
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+\usepackage[default]{sourcesanspro}
+
+\makeatletter
+\def\@makechapterhead#1{%
+  %\vspace*{5\p@}%
+  {\parindent \z@ \raggedleft \normalfont
+    \ifnum \c@secnumdepth >\m@ne
+        \large\bfseries #1
+        \par\nobreak
+%        \vskip 10\p@
+        \rule{\columnwidth}{.1pt}%
+%        \vskip 10\p@
+    \fi
+    \interlinepenalty\@M
+%    \large \bfseries \MakeUppercase{#1}\par\nobreak
+%    \vskip 5\p@
+  }}
+\makeatother
+
+\usepackage{enumitem}
+\setitemize{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
+\usepackage{graphicx}
+
+
+\title{Fire Emblem Three Houses Any\% Cindered Shadows Normal/Classic}
+\author{Mr.Tyton}
+\titlepic{\includegraphics[width=\textwidth]{./Cindered Shadows/cindered_shadows.jpg}}
+\begin{document}
+\singlespacing
+\maketitle
+\tableofcontents
+\makeatletter
+\patchcmd{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi}{}{}{}
+\makeatother
+
+\newcounter{chaptercount}
+
+\newenvironment{battlespecial}[1]{\begin{tcolorbox}[title=\begin{center}#1\end{center},colbacktitle=red!50!white]}{\end{tcolorbox}}
+\newenvironment{battle}[1]{\refstepcounter{chaptercount} \begin{tcolorbox}[title=\begin{center}Chapter \thechaptercount\ - #1\end{center},colbacktitle=red!50!white]}{\end{tcolorbox}}
+
+
+\newcommand{\battleinfo}[3]{Goal: \ifthenelse{\equal{#1}{rout}}{Rout the Enemy}{\ifthenelse{\equal{#1}{commander}}{Defeat the Commander}{#1}} \newline Turns: #2 \newline Units: #3}
+
+\newenvironment{shop}[1]{\begin{tcolorbox}[title=\begin{center}SHOP\, #1 GOLD\end{center},colbacktitle=OliveGreen!50!white]}{\end{tcolorbox}}
+
+\newcommand{\cs}[1][]{\textbf{CS}%
+	\ifthenelse{\isempty{#1}}{}{ (#1)}%
+}
+
+% Console Buttons
+\newcommand{\down}{\textbf{$\downarrow$}}
+\newcommand{\abutton}{\textbf{A}}
+\newcommand{\bbutton}{\textbf{B}}
+
+% Instruct
+\newcommand{\autoInstruct}{\textbf{Auto-Instruct}}
+
+% -----------------------
+
+\newcommand{\createCharacter}[2]{%
+\expandafter\newcommand\csname #1\endcsname{\textbf{\textcolor[RGB]{#2}{#1}}} %
+\expandafter\newcommand\csname #1f\endcsname{\item \textbf{\textcolor[RGB]{#2}{#1}}:}
+}
+
+
+% Byleth
+\createCharacter{Byleth}{73,114,132}
+
+% Black Eagle
+\createCharacter{Edelgard}{254,255,244}
+\createCharacter{Hubert}{45,60,62}
+\createCharacter{Ferdinand}{254,180,116}
+\createCharacter{Linhardt}{71,99,82}
+\createCharacter{Caspar}{168,228,226}
+\createCharacter{Bernadetta}{158,127,167}
+\createCharacter{Dorothea}{119,85,87}
+\createCharacter{Petra}{129,68,98}
+
+% Blue Lions
+\createCharacter{Dimitri}{209, 199, 36}
+\createCharacter{Dedue}{231,232,224}
+\createCharacter{Felix}{63,64,96}
+\createCharacter{Ashe}{181,189,198}
+\createCharacter{Sylvain}{229,111,85}
+\createCharacter{Mercedes}{244,220,196}
+\createCharacter{Annette}{246,166,125}
+\createCharacter{Ingrid}{248,230,158}
+
+% Black Deer
+\createCharacter{Claude}{76,67,66}
+\createCharacter{Lorenz}{115,115,172}
+\createCharacter{Raphael}{239,216,162}
+\createCharacter{Ignatz}{198,198,157}
+\createCharacter{Lysithea}{254,252,253}
+\createCharacter{Marianne}{170,208,250}
+\createCharacter{Hilda}{252,175,183}
+\createCharacter{Leonie}{241,125,91}
+
+% The Church of Seiros
+\createCharacter{Seteth}{111,178,157}
+\createCharacter{Flayn}{158,239,205}
+\createCharacter{Hanneman}{151,151,151}
+\createCharacter{Manuela}{175,154,127}
+\createCharacter{Gilbert}{247,170,135}
+\createCharacter{Alois}{134,123,104}
+\createCharacter{Catherine}{244,234,199}
+\createCharacter{Shamir}{86,89,126}
+\createCharacter{Cyril}{70,62,60}
+
+% Ashen Wolves
+\createCharacter{Yuri}{172,160,207}
+\createCharacter{Balthus}{52,57,64}
+\createCharacter{Constance}{255,253,174}
+\createCharacter{Hapi}{254,89,109}
+
+% Miscellaneous Character
+\createCharacter{Anna}{216,93,119}
+
+% -----------------------
+
+% ROUTE SPECIFIC COMMANDS
+
+% Define the dancer for this route
+\newcommand{\dancer}{\Sylvianf}
+
+
+% -----------------------
+
+
+\newcommand{\enemy}[1]{\textbf{\textcolor{red}{#1}}}
+\newcommand{\autoturnCharge}{\turn{\autoCharge}}
+\newcommand{\autoCharge}{\item Auto-Battle: Charge}
+\newcommand{\autoUnite}{\item Auto-Battle: Unite}
+\newcommand{\autoFallBack}{\item Auto-Battle: Fall Back}
+\newcommand{\move}[1]{\item Move #1}
+\newcommand{\attack}[2]{\item Attack \enemy{#1} #2}
+\newcommand{\attacks}[2]{\ Attack \enemy{#1} #2}
+\newcommand{\physic}[2]{\item Physic #1 #2}
+\newcommand{\recover}[2]{\item Recover #1 #2}
+\newcommand{\wait}{\item Wait}
+\newcommand{\turn}[1]{\item \ \begin{itemize} #1 \end{itemize}}
+\newcommand{\turnend}{\item End}
+\newcommand{\trade}[3]{\item Trade with #1: #2 for #3}
+\newcommand{\use}[1]{\item Use #1}
+\newcommand{\equip}[1]{\item Equip #1}
+\newcommand{\dismount}{\item Dismount}
+\newcommand{\movedismountwait}[1]{\begin{itemize}\move{#1}\dismount\wait\end{itemize}}
+\newcommand{\movedismountuse}[2]{\begin{itemize}\move{#1}\dismount\use{#2}\end{itemize}}
+\newcommand{\movewait}[1]{\begin{itemize}\move{#1}\wait\end{itemize}}
+\newcommand{\moveuse}[2]{\begin{itemize}\move{#1}\use{#2}\end{itemize}}
+\newcommand{\moveequip}[2]{\begin{itemize}\move{#1}\equip{#2}\wait\end{itemize}}
+\newcommand{\moveattack}[3]{\begin{itemize}\move{#1}\attack{#2}{#3}\end{itemize}}
+\newcommand{\onlyattack}[2]{\begin{itemize}\attack{#1}{#2}\end{itemize}}
+\newcommand{\moverecover}[3]{\begin{itemize}\move{#1}\recover{#2}{#3}\end{itemize}}
+\newcommand{\onlyphysic}[2]{\begin{itemize}\physic{#1}{#2}\end{itemize}}
+\newcommand{\movephysic}[3]{\begin{itemize}\move{#1}\physic{#2}{#3}\end{itemize}}
+\newcommand{\gambit}[3]{\item Gambit: #1 on #2 #3}
+\newcommand{\movegambit}[4]{\begin{itemize}\move{#1}\gambit{#2}{#3}{#4}\end{itemize}}
+
+\newcommand{\dance}[3]{\dancer \begin{itemize}\move{#1}\item Dance for #2 #3\end{itemize}}
+
+\newcommand{\divinepulse}{\textbf{Divine Pulse}}
+
+% Prep Macros
+\newcommand{\units}[1]{\item Select Units: \begin{itemize} #1 \end{itemize}}
+\newcommand{\remove}[1]{\item Remove #1}
+\newcommand{\add}[1]{\item Add #1}
+
+\newcommand{\prep}[1]{\newline Preparations: \begin{itemize} #1 \end{itemize}}
+\newcommand{\inventory}[1]{\item Inventory: \begin{itemize} #1 \end{itemize}}
+\newcommand{\battalion}[1]{\item Battalion: \begin{itemize} #1 \end{itemize}} 
+\newcommand{\abilities}[1]{\item Abilities: \begin{itemize} #1 \end{itemize}}
+\newcommand{\armory}[1]{\item Armory: \begin{itemize} #1 \end{itemize}}
+\newcommand{\repair}[1]{\item Repair: \begin{itemize} #1 \end{itemize}}
+\newcommand{\forge}[1]{\item Forge: \begin{itemize} #1 \end{itemize}}
+\newcommand{\replenish}{\item Replenish all Battalions}
+\newcommand{\map}[1]{\item Map: \begin{itemize}#1\end{itemize}}
+\newcommand{\swap}[2]{\item Switch #1 with #2} 
+
+% Buying and Selling Macros. Comma delimited arguments.
+
+%\newcommand{\createMenu}[2]{%
+%\expandafter\newcommand\csname #1\endcsname{\textbf{\textcolor[RGB]{#2}{#1}}}}
+\newcommand*{\sell}[2][]{%
+\begin{itemize}
+  \item Sell\ifthenelse{\equal{#1}{}}{}{ Everything But}:
+  \begin{itemize}
+  \foreach \superscript/\entry in {#2} {%
+    \item \entry%
+  }%
+  \end{itemize}
+  \end{itemize}
+}
+
+\newcommand*{\buy}[1]{%
+\begin{itemize}
+  \item Buy:
+  \begin{itemize}
+  \foreach \superscript/\entry in {#1} {%
+    \item \entry%
+  }%
+  \end{itemize}
+  \end{itemize}
+}
+
+\newcommand*{\removeAbility}[2][]{%
+\begin{itemize}
+  \item Remove\ifthenelse{\equal{#1}{}}{}{ Everything But}:
+  \begin{itemize}
+  \foreach \superscript/\entry in {#2} {%
+    \item \entry%
+  }%
+  \end{itemize}
+  \end{itemize}
+}
+
+\newcommand*{\addAbility}[1]{%
+\begin{itemize}
+  \item Add:
+  \begin{itemize}
+  \foreach \superscript/\entry in {#1} {%
+    \item \entry%
+  }%
+  \end{itemize}
+  \end{itemize}
+}
+
+% Arrows
+\newcounter{ct}
+\newcommand{\arrow}[2]{%
+\setcounter{ct}{0}\ (%
+\whiledo{\value{ct} < #2}{%
+\ifthenelse{\equal{#1}{left}}{$\leftarrow$}{$\rightarrow$}\stepcounter{ct}})}
+
+\newcommand{\ifc}[2]{\item \textit{If #1}: \begin{itemize}{#2}\end{itemize}}
+
+\newcommand{\support}[3]{\item Support #1 to #2, Rank #3}
+
+
+\setlength{\columnsep}{.5cm}
+
+\section*{Acknowledgements}
+
+Thank you to the people on the FE Discord, including but not limited to: \textbf{People}.
+\newpage
+\chapter*{General Information, Mechanics, etc.}
+\addcontentsline{toc}{chapter}{General Information, Mechanics, etc.}
+\input{./General Information/fastest_version.tex}
+\input{./General Information/skipping_cutscenes.tex}
+\input{./General Information/movement.tex}
+\input{./General Information/calendar.tex}
+\input{./General Information/bugs.tex}
+\input{./General Information/lecture_questions.tex}
+\input{./General Information/RNG.tex}
+\newpage
+\setlist[enumerate]{label={Turn \arabic*:\newline}, align=left}
+\input{./Cindered Shadows/chapter1.tex}
+\input{./Cindered Shadows/chapter2.tex}
+\input{./Cindered Shadows/chapter3.tex}
+\input{./Cindered Shadows/chapter4.tex}
+\newpage
+\input{./Cindered Shadows/chapter5.tex}
+\input{./Cindered Shadows/chapter6.tex}
+\input{./Cindered Shadows/chapter7.tex}
+\end{document}

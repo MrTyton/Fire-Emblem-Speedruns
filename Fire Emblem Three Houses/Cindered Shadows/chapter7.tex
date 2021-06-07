@@ -1,0 +1,40 @@
+\chapter{Chapter 7 - A Beast in the Cathedral}
+
+\begin{battle}{A Beast in the Cathedral}
+\begin{multicols}{2}
+
+\battleinfo{commander}{4}{\Byleth, \Dimitri, \Claude, \Dimitri, \Balthus, \Linhardt, \Ashe}
+\prep{
+	\replenish
+	\map{
+		\swap{\Dimitri}{\Hapi}
+	}
+}
+
+\begin{enumerate}
+\turn{
+	\Bylethf
+	\movegambit{6U}{Assault Troop}{Lower Left Barrier Tile}{1U}
+	\Dimitrif
+	\movegambit{7U, Dismount}{Blaze}{Lower Center Barrier Tile}{1U}
+	\autoCharge
+	\item Tilt the camera a bit so that you can see if a clone is spawned that would block \Hapi's movement, then tilt it back up to reduce lag.
+}
+\columnbreak
+\turn{
+	\ifc{a clone spawned}{
+		\item Use \Balthus\ to kill it
+	}
+	\Hapif
+	\movegambit{1R, 5U}{Blaze}{Upper Right Barrier Tile}{1L}
+	\autoCharge	
+}
+\item \ 
+\begin{itemize}
+	\item Keep on Auto-Battle: Charging until the \enemy{Boss} is dead.
+\end{itemize}
+\end{enumerate}
+
+\end{multicols}
+
+\end{battle}

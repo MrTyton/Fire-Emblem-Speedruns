@@ -1,0 +1,110 @@
+\chapter{Chapter 4 - A Harrowing Escape}
+
+\begin{battle}{A Harrowing Escape}
+\begin{multicols}{2}
+
+\battleinfo{Escape the Dungeon}{12}{\Byleth, \Dimitri}
+\prep{
+	\replenish
+	\armory{
+		\repair{
+			\Bylethf
+			\begin{itemize}
+			\item Sword of the Creator
+			\end{itemize}
+		}
+		\forge{
+			\Dimitrif
+			\begin{itemize}
+			\item Steel Lance \arrow{right}{1} Steel Lance+
+			\end{itemize}
+			\Claudef
+			\begin{itemize}
+			\item Steel Bow \arrow{right}{1} Steel Bow+
+			\end{itemize}
+		}
+	}
+	\units{
+		\remove{\Yuri, \Constance, \Edelgard, \Claude, \Ashe, \Hilda, \Linhardt, \Hapi, \Balthus, keeping only \Byleth\ and \Dimitri}
+	}
+}
+
+\begin{enumerate}
+\turn{
+	\Bylethf
+	\movewait{4D}
+	\Dimitrif
+	\moveequip{5R, 3D}{Steel Lance+}
+}
+\turn{
+	\Dimitrif
+	\moveuse{1R, 7D}{Lever}
+	\autoCharge
+}
+\turn{
+	\Bylethf
+	\onlyattack{Dark Bishiop}{1R}
+	\movewait{1R, 5D}
+	\autoUnite
+}
+\turn{
+	 \Bylethf
+	 \movewait{4D, 2L}
+	 \autoUnite	 
+}
+\turn{
+	 \Dimitrif
+	 \moveuse{4D, 1R}{Concoction}
+	 \Bylethf
+	 \movewait{1D, 5L}
+}
+\columnbreak
+\turn{
+	\Bylethf
+	\moveuse{1D, 1L}{Lever}
+	\movewait{4R}
+	\turnend
+}
+\turn{
+	\Bylethf
+	\movewait{2U, 4R}
+	\Dimitrif
+	\movewait{2D, 6R}
+}
+\turn{
+	\Dimitrif
+	\moveuse{3R, 1U}{Door}
+	\movewait{1U}
+	\Bylethf
+	\movewait{6R}
+}
+\turn{
+	 \Dimitrif
+	 \moveattack{2U}{Mage}{1U}
+	 \movewait{6U}
+	 \Bylethf
+	 \movewait{3R, 3U}
+}
+\turn{
+	\Bylethf
+	\movewait{6U}
+	\Dimitrif
+	\moveuse{2R, 4U}{Concoction}
+}
+\turn{
+	 \Dimitrif
+	 \movewait{6U}
+	 \Bylethf
+	 \movewait{1R, 5U}
+}
+\turn{
+	\Bylethf
+	\movewait{1R, 5U}
+}
+
+
+\end{enumerate}
+
+\end{multicols}
+
+\end{battle}

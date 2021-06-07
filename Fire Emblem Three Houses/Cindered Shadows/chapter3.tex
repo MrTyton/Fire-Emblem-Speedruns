@@ -1,0 +1,96 @@
+\chapter{Chapter 3 - Search for the Chalice}
+
+\begin{battle}{Search for the Chalice}
+\begin{multicols}{2}
+
+\battleinfo{Special}{7}{\Byleth, \Ashe, \Linhardt, \Dimitri, \Claude, \Yuri}
+\prep{
+	\inventory{
+		\Bylethf
+		\begin{itemize}
+			\trade{\Yuri}{Iron Sword}{Fetters of Dromi}
+		\end{itemize}
+	}
+	\map{
+		\swap{\Claude}{\Linhardt}
+		\swap{\Balthus}{\Dimitri}
+	}
+	\item Make sure that you Convoy the \textbf{Spellbreak Key} when it drops.
+}
+
+\begin{enumerate}
+\turn{
+	\Ashef
+	\movegambit{3L, 1D}{Retribution}{\Byleth}{1D}
+	\Dimitrif
+	\movewait{2D}
+	\Yurif
+	\begin{itemize}
+		\move{1U, 4R}
+		\item Combat Arts: Foul Play \Byleth
+	\end{itemize}
+	\Bylethf
+	\moveequip{4R}{Steel Sword}
+	\turnend	
+}
+\turn{
+	  \Bylethf
+	  \moveattack{4D}{Paladin}{2D}
+	  \movewait{1L}
+	  \Claudef
+	  \moveattack{3D, 1L}{Golem's Upper-Right Barrier}{2D with Monster Blast}
+	  \movewait{2U}
+	  \Linhardtf
+	  \begin{itemize}
+	  	\move{2R}
+	  	\equip{Heal}
+	  	\physic{Byleth}{\arrow{right}{2}}
+	  \end{itemize}
+	  \Yurif
+	  \moverecover{1L, 2D}{\Dimitri}{1D}
+	  \turnend
+}
+\columnbreak
+\turn{
+	\Linhardtf
+	\begin{itemize}
+		\physic{\Dimitri}{\arrow{left}{1}}
+	\end{itemize}
+	\Bylethf
+	\movewait{1L, 5D}
+	\turnend
+}
+\turn{
+	 \Bylethf
+	 \moveuse{1R, 4D}{Concoction}
+	 \Yurif
+	 \begin{itemize}
+	 	\recover{\Dimitri}{1D}
+	\end{itemize}
+	\turnend
+	\item Convoy the \textbf{Spellbreak Key} when it drops.
+}
+\turn{
+	\Bylethf
+	\moveattack{4D}{Soldier}{2D}
+	\turnend
+}
+\turn{
+	\Bylethf
+	\begin{itemize}
+		\move{1R, 5D}
+		\item Convoy: Trade Vulneary for \textbf{Spellbreak Key}
+		\use{Vulneary}
+	\end{itemize}
+	\turnend
+}
+\turn{
+	\Bylethf
+	\moveuse{3R}{Lever}
+}
+
+\end{enumerate}
+
+\end{multicols}
+
+\end{battle}

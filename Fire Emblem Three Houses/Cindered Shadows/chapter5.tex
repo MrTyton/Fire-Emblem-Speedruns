@@ -1,0 +1,95 @@
+\chapter{Chapter 5 - Besieged in the Chapel Ruins}
+
+\begin{battle}{Besieged in the Chapel Ruins}
+\begin{multicols}{2}
+
+\battleinfo{rout}{6-10}{\Byleth, \Dimitri, \Claude, \Dimitri, \Balthus, \Linhardt, \Ashe, Aelfric}
+\prep{
+	\inventory{
+		\battalion{
+			\swap{\Hapi}{\Edelgard}
+			\swap{\Yuri}{\Dimitri}
+		}
+	}
+	\units{
+		\remove{\Hapi, \Constance, \Edelgard, \Hilda}
+	}
+	\map{
+		\Dimitrif
+		\begin{itemize}
+			\move{1D, 1R}
+		\end{itemize}
+		\Claudef
+		\begin{itemize}
+			\move{3U, 1L}
+		\end{itemize}
+	}
+}
+
+\begin{enumerate}
+\turn{
+	\Yurif \arrow{left}{2}
+	\begin{itemize}
+		\move{3L}
+		\item Combat Arts: Foul Play \Claude\ \arrow{left}{1}
+	\end{itemize}
+	\Claudef
+	\moveattack{3L, 2U}{Thief Leader}{2L with Silver Bow (29 Str) or Steel Bow+ (30 Str)}
+	\movewait{2D}
+	 \Bylethf
+	 \movewait{2D, 2R}
+	 \Ashef
+ 	 \movegambit{3L}{Retribution}{\Dimitri}{1L}
+ 	 \Dimitrif
+ 	 \moveattack{4D}{Foretress Knight}{1D}
+ 	 \movewait{4D}
+ 	 \Balthusf
+ 	 \moveattack{1D}{Bird}{1D with \textbf{Vajra Mushti}}
+ 	 \Linhardtf
+ 	 \movephysic{2D}{\Dimitri}{or anyone else if \Dimitri\ is healthy.}
+ 	 \item Aelfric:
+ 	 \movewait{3D, 1L}
+}
+\columnbreak
+\turn{
+	\Linhardtf
+	\onlyphysic{\Dimitri}{}
+	\Dimitrif
+	\movegambit{1L}{Blaze}{Assassin}{1D}
+	\movewait{1D, 1L}
+	\Balthusf
+	 \ifc{the \enemy{Bird} is still alive}{
+		 \attack{Bird}{1D}
+	 }
+	 \ifc{the \enemy{Bird} is dead}{
+	 	\move{4R, 1U}
+	 	\wait
+	 }
+	 \Claudef
+	 \begin{itemize}
+	 	\move{6D}
+	 	\item Dismount
+	 	\attack{Enemy}{1U, 1R with Steel Bow+}
+	\end{itemize}
+	\Bylethf
+	\moveattack{5R}{Fortress Knight}{2U}
+	\movewait{1L}
+}
+
+\item The rest of the map is mostly improv. General Tips:
+\begin{itemize}
+\item If the two mages near the boss haven't moved, \Dimitri\ should try to lure exactly one of them.
+\item \Dimitri/\Balthus\ should prioritize killing units with battalions.
+\item Be careful though, the paladins in \Dimitri's area have Horseslayers. He won't get one-shotted, but it can still be iffy.
+\item If the main lower area is almost cleared, then \Dimitri\ should go for the boss and Tempest Lance him. Then go north to help \Byleth.
+\item \Byleth\ will very frequently get rattled, this is expected. Prioritize attacking \enemy{Fortress Knights}, since \Byleth\ can't one-round them without crits.
+\item Make sure no enemy units get in range of \Linhardt/\Ashe/Aelfric, otherwise you're going to lose a bunch of time. This sometimes can't be avoided.
+\item \Linhardt\ should typically stay in place and use Physic every turn on \Dimitri/\Byleth
+\item A 6 turn is the turn count to aim for, but 7-10 is very possible depending on how unlucky you are.
+\end{itemize}
+
+\end{enumerate}
+
+\end{multicols}
+
+\end{battle}

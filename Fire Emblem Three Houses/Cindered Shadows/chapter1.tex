@@ -1,0 +1,113 @@
+\chapter{Chapter 1 - The Fourth House}
+
+\begin{itemize}
+\item Difficulty: Normal/Casual
+\item Male \Byleth
+\end{itemize}
+
+\begin{battle}{The Fourth House}
+\begin{multicols}{2}
+
+\battleinfo{commander}{9}{\Byleth, \Ashe, \Linhardt, \Dimitri, \Claude}
+\prep{
+	\item Options:
+	\begin{itemize}
+		\item Combat Animations:	Off \arrow{right}{1}
+		\item Assist Animations: Off
+		\item Battle Speed: Fast
+		\item Action Skip: On
+		\item Automatic Cursor: Off
+	\end{itemize}
+	\abilities{
+		\Bylethf
+		\removeAbility{Battalion Vantage}
+		\addAbility{HP+5}
+		\Dimitrif \arrow{right}{2}
+		\removeAbility{Authority Level 3, Battalion Wrath}
+		\addAbility{HP+5, Dexterity+4}
+		\Claudef \arrow{right}{1}
+		\addAbility{Authority Level 3, Battalion Desparation}
+		\removeAbility{HP+5, Dexterity+4}
+	}
+	\armory{
+		\Dimitrif
+		\buy{2 Silver Lances}
+		\Claudef
+		\buy{1 Silver Bow}
+	}
+}
+
+\begin{enumerate}
+\turn{
+	\Ashef \arrow{left}{2}
+	\movegambit{3L, 2D}{Retribution}{\Hilda}{1R}
+	\Dimitrif \arrow{\right}{3}
+	\movegambit{1U, 7R}{Assault Troop}{\enemy{Rogue}}{1R}
+	\turnend	
+}
+\turn{
+	\Linhardtf \arrow{right}{1}
+	\movephysic{4R}{\Dimitri}{}
+	\Dimitrif \arrow{left}{1}
+	\moveattack{1R}{\Balthus}{1R with Silver Lance}
+	\movewait{5D, 2R}
+	\autoCharge
+}
+\turn{
+	\Linhardtf \arrow{right}{2}
+	\movephysic{4R}{\Dimitri}{}
+	\autoCharge
+}
+\columnbreak
+\turn{
+	\Claudef
+	\movewait{5R - 1D, 1L from the Gate, which is 2D, 4L from \Hapi. Actual travelling will be different based on where Charge placed everyone.}
+	\autoCharge
+	\Dimitrif
+	\begin{itemize}
+		\item When the Door Key is picked up, send the Iron Lance into the Convoy.
+	\end{itemize}
+}
+\turn{
+	\Dimitrif \arrow{right}{2}
+	\moveattack{2R, 4U}{\enemy{Rogue}}{1U, with the more worn-down Silver Lance}
+	\Linhardtf \arrow{left}{2}
+	\movephysic{Upper-Right Corner}{\Dimitri}{\arrow{right}{1}}
+	\turnend
+}
+\turn{
+	\Dimitrif \arrow{right}{2}
+	\moveattack{1R, 5U}{\enemy{Archer}}{1L}
+	\Linhardtf \arrow{right}{1}
+	\begin{itemize}\physic{\Dimitri}{\arrow{left}{1}}\end{itemize}
+	\turnend
+}
+\turn{
+	\Dimitrif \arrow{left}{1}
+	\movewait{4L, 1U}
+	\begin{itemize}
+	\item If there are any remaining enemies, kill them and then Canto to the avoid tile to the right of the left hole.
+	\end{itemize}
+	\Linhardtf \arrow{right}{1}
+	\begin{itemize}\physic{\Dimitri}{\arrow{right}{1}}\end{itemize}
+	\turnend
+}
+\turn{
+	\Dimitrif \arrow{left}{1}
+	\moveattack{1U}{\Constance}{1U with Javelin and Tempest Lance}
+	\movewait{1U}
+	\Linhardtf \arrow{right}{1}
+	\begin{itemize}\physic{\Dimitri}{\arrow{right}{1}}\end{itemize}
+	\turnend
+}
+\turn{
+	\Dimitrif \arrow{left}{1}
+	\moveattack{3U}{\Yuri}{1R with Silver Lance and Knightkneeler. If it isn't a one-shot, use Tempest Lance instead.}
+	\ifc{\Dimitri\ fails to kill \Yuri}{\item \divinepulse \item Burn a RN with \Linhardt's Physic}
+	\ifc{\Dimitri\ still fails to kill \Yuri}{\item \divinepulse \item Try Gambiting \Yuri\ instead from 1U above \Yuri}
+}
+\end{enumerate}
+
+\end{multicols}
+
+\end{battle}

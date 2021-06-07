@@ -1,0 +1,123 @@
+\chapter{Chapter 2 - Ambush in the Arena}
+
+\begin{battle}{Ambush in the Arena}
+\begin{multicols}{2}
+
+\battleinfo{rout}{10}{\Byleth, \Ashe, \Linhardt, \Dimitri, \Claude}
+\prep{
+	\item Replenish \Dimitri's Battalion, either through the prompt of his battalion broke in the previous chapter or through the Battalion Guild
+	\item \Claude\ needs 29 strength by the end this chapter.
+}
+
+\begin{enumerate}
+\turn{
+	\Dimitrif 
+	\moveattack{1R, 3U}{Grapper}{1U with Silver Lance and Knightkneeler. If you can one-shot with Steel Lance then do so instead.}
+	\movewait{2U, 1L}
+	\ifc{\Dimitri\ misses}{\item \divinepulse and do \Ashe's attack first.}
+	\Ashef \arrow{right}{2}
+	\moveattack{1L, 3U}{Grappler}{1L, 2U with Iron Bow and Curved Shot}
+	\autoCharge
+}
+\turn{
+	\Linhardtf \arrow{right}{1}
+	\begin{itemize}
+		\move{4U}
+		\item Restore \Dimitri\ if he's rattled
+	\end{itemize}
+	\Ashef \arrow{right}{4}
+	\movegambit{2U}{Retribution}{\Dimitri}{1U}
+	\Balthusf \arrow{right}{2}
+	\onlyattack{Assassin}{1D}
+	\Dimitrif \arrow{left}{2}
+	\onlyattack{Mercenary}{1L with the Silver Lance}
+	\movewait{8U}
+	\Bylethf \arrow{right}{2}
+	\movewait{3D, 2L}
+	\Claudef \arrow{left}{1}
+	\onlyattack{Any Enemies that are nearby}{}
+	\ifc{\Constance\ and \Hapi\ died}{%
+		\move{3R of \Balthus}
+		\wait
+	}
+	\ifc{\Constance\ and \Hapi\ didn't die}{%
+		\move{1U, 3R of \Balthus}
+		\wait
+	}
+	\turnend
+}
+\turn{
+	\Dimitrif
+	\begin{itemize}
+		\move{4U}
+		\item Discard the more Worn Down Silver Lance
+		\equip{Silver Lance}
+		\wait
+	\end{itemize}
+	\Claudef
+	\moveattack{4U}{Assassin}{2R}
+	\movewait{2U}
+	\Linhardtf
+	\movephysic{1L, 3U}{\Claude}{\arrow{left}{1}}
+	\columnbreak
+	\Bylethf
+	\movewait{1D, 4L}
+	\turnend
+}
+\turn{
+	\Bylethf
+	\movewait{4L}
+	\Dimitrif
+	\movewait{4L}
+	\Claudef
+	\movedismountuse{7L}{Concoction}
+	\Linhardtf
+	\movephysic{1U, 3L}{\Dimitri\ or \Claude}{}
+	\turnend
+}
+\turn{
+	\Linhardtf
+	\movephysic{1U, 3L}{\Dimitri\ or \Claude}{}
+	\Dimitrif
+	\movewait{8L}
+	\Claudef
+	\moveattack{4L, 1D}{Mercenary}{2L with Silver Bow}
+	\turnend	
+}
+\turn{
+	\Claudef
+	\moveattack{4D, 1L}{Valkyrie}{3L with Curved Shot}
+	\ifc{the attack misses}{\item \divinepulse\ and burn an RN with \Linhardt}
+	\turnend
+}
+\turn{
+	 \Dimitrif
+	 \moveattack{2L}{Last Mage}{1L}
+	 \movewait{3D, 2L}
+	 \Claudef
+	 \moveuse{2D}{Concoction}
+	 \turnend
+}
+\turn{
+	\Dimitrif
+	\moveattack{5D, 1L}{Mage}{1U}
+	\movewait{1D}
+	\Claudef
+	\onlyattack{Archer}{1U, 1L with Steel Bow}
+	\turnend
+}
+\turn{
+	\Claudef
+	\onlyattack{Mercenary}{1D, 1L}
+	\turnend
+}
+\turn{
+	\Claudef
+	\moveattack{2U}{Mercenary}{1U, 1R}
+}
+
+\end{enumerate}
+
+\end{multicols}
+
+\end{battle}

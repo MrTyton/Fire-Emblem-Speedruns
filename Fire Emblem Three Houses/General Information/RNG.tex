@@ -1,0 +1,49 @@
+\section*{RNG}
+\addcontentsline{toc}{section}{RNG}
+
+\subsection*{2RN System}
+\addcontentsline{toc}{subsection}{2RN System}
+\begin{itemize}
+\item Three Houses uses a sequence of random numbers (RNs) between 0-99. The game pulls numbers out of this sequence to calculate combat parameters.
+\item Like most FE games, the game uses a 2RN system to calculate hitrates. It takes the average of two random numbers then compares it to the displayed hitrate - in other words, hitrates you see are lies. Everything that uses hitrates uses the 2RN system, including attacks, gambits, monster AOEs, silence, and so on. Crits and crest activations do NOT use 2RN.
+\item The tl;dr non-mathy version is that displayed hitrates >50\% have a higher hitrate than the game actually tells you, and displayed hitrates <50\% are actually lower than what's displayed. 
+\item To see the actual hitrates for each displayed hitrate, see: https://serenesforest.net/general/true-hit/"											
+\end{itemize}
+
+\subsection*{Crest Activation and Critial Hits}
+\addcontentsline{toc}{subsection}{Crest Activation and Critical Hits}
+\begin{itemize}
+\item Crest activations and critical hits do NOT use the 2RN system - in other words, what you get is actually what you see.
+\item The RNs are rolled as such for each hit:
+\begin{enumerate}
+\item One RN is rolled for each crest activation - multiple crests can NOT be activated simultaneously, so I'm assuming if a crest activates, it skips the RNs for the rest of the crests.
+\item Regardless of whether the crests activate or not, two RNs are rolled to calculate the hitrate via the 2RN system.
+\item If and only if the attack lands, then one RN is rolled to calculate crit.
+\end{enumerate}
+\end{itemize}
+
+\subsection*{Divine Pulse}
+\addcontentsline{toc}{subsection}{Divine Pulse}
+\begin{itemize}
+\item Using \divinepulse\ not only reverts actions that occurred, but it also reverts the RNG sequence to where it originally was - in other words, if you do the same thing, you'll get the exact same result. But knowing how the RNG works will allow you to guarantee a different result, or take advantage of the RNs you do know of and apply it somewhere else. 
+
+\item The simplest way to ensure you get a different result is to revert time with \divinepulse, attack an arbitrary enemy unit with a filler player unit, then try again - this will usually suffice and for 90\% of your cases, this should be enough. But maybe you did this already and you still aren't getting the result you want? Here's a detailed example:
+\begin{itemize}
+\item \Byleth\ attacks the \enemy{Death Knight} and get an unfavorable outcome where you miss and don't kill him. As a point of reference, let's call the starting RN for this exchange as ``RN \#1''.
+
+\item You now revert time to just before attacking the \enemy{Death Knight}. You try the following options:
+
+\item Attack a generic enemy unit with \Shamir\ - she has no crest, she attacks only once and lands her hit, and she doesn't get countered. This burns exactly 3 RNs (2 for her hit, 1 for her crit). You're now attacking the \enemy{Death Knight} starting at RN \#4, but you still don't kill him :(
+
+\item Attack a generic enemy with \Hubert\ - he has no crest, he lands his one hit, and he doesn't get retaliated. This will give exactly the same result as the \Shamir\ example, since this still burns exactly 3 RNs.
+
+\item Attack a generic enemy with \Felix\ - he has a crest but still only attacks once and lands his hit and doesn't get countered. This exchange rolled an extra RN thanks to his Crest of Fraldarius, so now you'll be on RN \#5, providing a different result when you attack the \enemy{Death Knight}
+
+\item Double attack a generic enemy with \Petra\ - she has no crest, but she double attacks, lands her hits, and doesn't get countered, so this rolls a total of 6 RNs. Now you're on RN \#7, which is a different set of RNs from all of the above examples.
+
+\item \Ingrid\ attacks someone up close - she attacks normally and lands it (3RNs) and the enemy retaliates but misses (2RNs), then she double attacks and lands it (3RNs). Now you're on RN \#9.
+\end{itemize}
+\item You generally have plenty of options to go with - the main point is to avoid wasting time and divine pulses with burns you already know the result of, such as the \Shamir\ and \Hubert\ examples.
+\item You can NOT RN burn for different level ups (you CAN exit the game and re-enter the map to reroll levels, but that wouldn't happen in a speedrun)
+\item Cursor movement does NOT affect the RNG, so if you're concerned about having to do fancy cursor shenanigans like the GBA FE speedruns, you don't have to.
+\end{itemize}
