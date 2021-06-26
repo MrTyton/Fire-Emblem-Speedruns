@@ -21,15 +21,15 @@
 \begin{enumerate}
 \turn{
 	\Ashef
-	\movegambit{3L, 1D}{Retribution}{\Byleth}{1D}
+	\movegambit{2L, 1D}{Retribution}{\Byleth}{1D}
 	\Dimitrif
-	\movewait{2D}
-	\Yurif
+	\moveequip{2D}{Steel Lance}
+	\Yurif \arrow{left}{1}
 	\begin{itemize}
 		\move{1U, 4R}
 		\item Combat Arts: Foul Play \Byleth
 	\end{itemize}
-	\Bylethf
+	\Bylethf \arrow{right}{3}
 	\moveequip{4R}{Steel Sword}
 	\turnend	
 }
@@ -37,33 +37,33 @@
 	  \Bylethf
 	  \moveattack{4D}{Paladin}{2D}
 	  \movewait{1L}
-	  \Claudef
+	  \Claudef \arrow{left}{2}
 	  \moveattack{3D, 1L}{Golem's Upper-Right Barrier}{2D with Monster Blast}
 	  \movewait{2U}
-	  \Linhardtf
+	  \Linhardtf \arrow{left}{1}
 	  \begin{itemize}
 	  	\move{2R}
 	  	\equip{Heal}
-	  	\physic{Byleth}{\arrow{right}{2}}
+	  	\physic{Byleth}{\arrow{left}{1}}
 	  \end{itemize}
-	  \Yurif
+	  \Yurif \arrow{left}{1}
 	  \moverecover{1L, 2D}{\Dimitri}{1D}
 	  \turnend
 }
 \columnbreak
 \turn{
-	\Linhardtf
+	\Linhardtf \arrow{left}{1}
 	\begin{itemize}
 		\physic{\Dimitri}{\arrow{left}{1}}
 	\end{itemize}
-	\Bylethf
+	\Bylethf \arrow{right}{4}
 	\movewait{1L, 5D}
 	\turnend
 }
 \turn{
 	 \Bylethf
 	 \moveuse{1R, 4D}{Concoction}
-	 \Yurif
+	 \Yurif \arrow{left}{2}
 	 \begin{itemize}
 	 	\recover{\Dimitri}{1D}
 	\end{itemize}
@@ -71,7 +71,7 @@
 	\item Convoy the \textbf{Spellbreak Key} when it drops.
 }
 \turn{
-	\Bylethf
+	\Bylethf \arrow{right}{3}
 	\moveattack{4D}{Soldier}{2D}
 	\turnend
 }
